@@ -1,0 +1,34 @@
+<!-- <table class="table">
+  <tr *ngFor="let emp of list"></tr>
+  <td>{{emp.FullName | json}} </td>
+  <td>{{ emp.Position}}</td>
+  <td>{{emp.Mobile}}</td>
+</table> -->
+
+<!-- <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex">
+      <a *ngFor="let category of list" class="p-2 text-muted">{{ category.FullName }}</a>
+    </nav>
+  </div>    -->
+
+  <!-- <table class="table table-hover">
+      <thead>
+        <tr *ngFor="let emp of list">
+          <th scope="col">{{emp.EMPCode}}--{{emp.FullName}}</th>
+          <th scope="col">{{emp.Position}}</th>
+          <th scope="col">{{emp.Mobile}}</th>
+        </tr>
+      </thead>
+    </table> -->
+    
+
+    <table style="margin-top:32px" class="table table-hover">
+        <thead>
+          <tr *ngFor="let emp of list">
+            <td (click)="populateForm(emp)" scope="col">[{{emp.EMPCode}}]-{{emp.FullName}}</td>
+            <td (click)="populateForm(emp)" scope="col">{{emp.Position}}</td>
+            <td (click)="populateForm(emp)" scope="col">{{emp.Mobile}}</td>
+            <td><button (click)="onDelete(emp.EmployeeID)" class="btn btn-sm btn-outline-danger">X</button> </td>
+          </tr>
+        </thead>
+      </table>
